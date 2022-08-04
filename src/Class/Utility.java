@@ -55,11 +55,12 @@ public class Utility {
         return null;
     }
 
-    // 回帰型ー階乗
-    public static <T> T factorial(T N) {
-        N.toString();
-        BigInteger n = new BigInteger(N);
+    // 回帰型ー階乗 //引数はBigIntegerのため注意。またBigIntegerはStringしか受け付けない仕様
+    public static <T> BigInteger factorial(BigInteger N) {
+        if (N.longValue() == 0) {
+            return new BigInteger("1");
+        }
 
-        return N;
+        return N.multiply(factorial(N.subtract(new BigInteger("1"))));
     }
 }
