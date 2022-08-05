@@ -1,4 +1,5 @@
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Class.FastScanner;
@@ -39,5 +40,9 @@ public class CompProgramming {
         boolean result = Math2.isPrime(N);
         System.out.println(result);
 
+        long O = 50;
+        ArrayList<?> results = new ArrayList<>(Math2.divisorList(O));
+        Long temp = (Long) results.get(0);
+        System.out.println(temp);
     }
 }
