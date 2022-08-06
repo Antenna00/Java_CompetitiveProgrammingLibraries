@@ -47,11 +47,13 @@ public class CompProgramming {
         // System.out.println(temp);
 
         boolean greater = true;
-        long N = 20;
+        long N = 10000;
 
-        Vector<?> vecResult = Math2.eratosthenesPrimeList(N, greater);
-        for (int i = 0; i <= vecResult.size() - 1; ++i)
-            System.out.println(vecResult.get(i));
+        // Vector<?> vecResult = Math2.eratosthenesPrimeList(N, greater);
+        // for (int i = 0; i <= vecResult.size() - 1; ++i)
+        // System.out.println(vecResult.get(i));
+
+        Math2.monteCarloPi(200);
 
     }
 }

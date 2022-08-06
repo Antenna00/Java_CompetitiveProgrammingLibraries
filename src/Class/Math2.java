@@ -77,6 +77,23 @@ public class Math2 {
 
         return vec;
     }
+
+    // モンテカルロ法　
+    public static <T> void monteCarloPi(T N) {
+        long n = Long.parseLong(N.toString());
+        int count = 0;
+
+        for (int i = 1; i <= n; ++i) {
+            double px = Math.random();
+            double py = Math.random();
+
+            if (px * px + py * py <= 1.0)
+                count += 1;
+        }
+        System.out.printf("%.12f\n", 4.0 * count / n);
+    }
+
+    public static <T> 
 }
 
 // N オブジェクト丸々コピーして別のアドレスへ割り当て
