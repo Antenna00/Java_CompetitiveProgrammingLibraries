@@ -34,14 +34,47 @@ public class Math2 {
     }
 
     // エラトステネスのふるい 素数列挙
-    public static <T> Vector<?> eratosthenesPrimeList(T N) {
+    public static <T> Vector<?> eratosthenesPrimeList(T N, boolean greater) {
+
+        long n = (long) N;
         Vector<Long> vec = new Vector<>();
         Vector<Boolean> vprime = new Vector<>();
-        long n = (long) N;
+        vprime.setSize((int) n + 1);
 
-        for (long i = 2; i * i <= n; ++i) {
+        // 全てにTrueを設定。Javaでは初期化時に設定できない模様。糞仕様である。
+        // for (int o = 0; o < vprime.size(); ++o) {
+        // //.addだと最後の値がシフトされる
+        // vprime.add(o, true);
+        // }
+        // Collections.replaceAll(vprime, false, true);
+        Collections.fill(vprime, true);
 
+        for (int i = 2; i * i <= n; ++i) {
+            // xの倍数のindexをfalseに置換
+            if (vprime.get(i) == true) {
+                for (int x = 2 * i; x <= n; x += i)
+                    vprime.set(x, false);
+            }
         }
+
+        // これforloop内じゃなくていいかも。
+        if (greater) {
+            for (long j = 2; j <= n; ++j) {
+                // forloop内でキャストしたくない・・・。
+                // 後の改善ポイント？ただ素数がint範囲以上の場合もあるのでとりあえず妥協。
+                if (vprime.get((int) j))
+                    vec.add(j);
+            }
+            Collections.sort(vec); // 昇順設定 ここも早くするなら自分でUtility書いたほうがいい。改善ポイント。
+        } else {
+            for (long k = 2; k <= n; ++k) {
+                if (vprime.get((int) k))
+                    vec.add(k);
+            }
+            Collections.sort(vec);
+            Collections.reverse(vec); // 降順に変更
+        }
+
         return vec;
     }
 }

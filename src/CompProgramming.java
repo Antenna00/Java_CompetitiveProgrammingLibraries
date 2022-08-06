@@ -1,6 +1,7 @@
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Vector;
 
 import Class.FastScanner;
 import Class.Utility;
@@ -36,13 +37,21 @@ public class CompProgramming {
         // out.println(WriterTest);
         // out.flush();
 
-        long N = 87423415;
-        boolean result = Math2.isPrime(N);
-        System.out.println(result);
+        // long N = 87423415;
+        // boolean result = Math2.isPrime(N);
+        // System.out.println(result);
 
-        long O = 50;
-        ArrayList<?> results = new ArrayList<>(Math2.divisorList(O));
-        Long temp = (Long) results.get(0);
-        System.out.println(temp);
+        // long O = 50;
+        // ArrayList<?> results = new ArrayList<>(Math2.divisorList(O));
+        // Long temp = (Long) results.get(0);
+        // System.out.println(temp);
+
+        boolean greater = true;
+        long N = 20;
+
+        Vector<?> vecResult = Math2.eratosthenesPrimeList(N, greater);
+        for (int i = 0; i <= vecResult.size() - 1; ++i)
+            System.out.println(vecResult.get(i));
+
     }
 }
