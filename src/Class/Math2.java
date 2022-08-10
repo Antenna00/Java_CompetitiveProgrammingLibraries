@@ -57,7 +57,6 @@ public class Math2 {
             }
         }
 
-        // これforloop内じゃなくていいかも。
         if (greater) {
             for (long j = 2; j <= n; ++j) {
                 // forloop内でキャストしたくない・・・。
@@ -67,7 +66,7 @@ public class Math2 {
             }
             Collections.sort(vec); // 昇順設定 ここも早くするなら自分でUtility書いたほうがいい。改善ポイント。
         } else {
-            for (long k = 2; k <= n; ++k) {
+            for (long k = 2; k <= n; ++k) { // これ記述量減らせるんでは。
                 if (vprime.get((int) k))
                     vec.add(k);
             }
@@ -78,7 +77,7 @@ public class Math2 {
         return vec;
     }
 
-    // モンテカルロ法　
+    // モンテカルロ法
     public static <T> void monteCarloPi(T N) {
         long n = Long.parseLong(N.toString());
         int count = 0;
@@ -93,7 +92,27 @@ public class Math2 {
         System.out.printf("%.12f\n", 4.0 * count / n);
     }
 
-    public static <T> 
+    // ユークリッド互除法 （最大公約数） ２桁ver O(log (A + B))
+    public static <T> long eucrid(T A, T B) {
+        int a = (int) A;
+        int b = (int) B;
+
+        while (a >= 1 && b >= 1) {
+            if (a < b)
+                b = b % a;
+            else
+                a = a % b;
+        }
+        if (a >= 1)
+            return a;
+        return b;
+    }
+
+    // ユークリッド互除法（最大公約数） ３桁ver
+    public static <T> long eucrid(T A, T B, T C) {
+
+        return 0;
+    }
 }
 
 // N オブジェクト丸々コピーして別のアドレスへ割り当て
