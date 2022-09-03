@@ -3,6 +3,8 @@ package Class;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Translation {
@@ -110,8 +112,20 @@ public class Translation {
 
     // ----------------------------------------
     // Array Translation from [char ArrayList]
-    public static <T> ArrayList<?> cArrToArray(ArrayList<Character> c, int convertTo) {
-        long t = 5004;
+    public static <T> List<?> cArrToArray(ArrayList<Character> cArr, int convertTo) {
+        /**
+         * int 0: convert to Integer ArrayList
+         * int 1:
+         **/
+
+        if (convertTo == 0) {
+            List<Integer> iArr = new ArrayList<>();
+
+            for (Character c : cArr) {
+                iArr.add(Integer.valueOf(c));
+            }
+
+        }
 
         return null;
     }
