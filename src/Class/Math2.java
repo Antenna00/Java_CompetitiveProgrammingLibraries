@@ -17,7 +17,7 @@ public class Math2 {
         }
         return true;
     }
-
+    
     // 約数列挙 ソート導入
     public static <T> ArrayList<?> divisorList(T N) {
         ArrayList<Long> arr = new ArrayList<>();
@@ -76,7 +76,7 @@ public class Math2 {
 
         return vec;
     }
-
+   
     // モンテカルロ法
     public static <T> void monteCarloPi(T N) {
         long n = Long.parseLong(N.toString());

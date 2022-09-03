@@ -12,7 +12,6 @@ public class Translation {
         /**
          * int 0: convert to Character ArrayList
          * int 1: convert to Integer ArrayList
-         * int 2:
          **/
         if (convertTo == 0) {
             ArrayList<Character> cArrList = new ArrayList<>();
@@ -73,6 +72,7 @@ public class Translation {
         } else if (convertTo == 2) {
             // Assume int is 1234...n -> ["12", "34"...n]
 
+            // Change the numDigit to control the digit that you want to separate
             int numDigit = 5;
             int indexA = 0;
             int indexB = 0;
@@ -98,7 +98,8 @@ public class Translation {
 
                 } catch (Exception Ignored) {
                 }
-                ;
+
+                return sArr;
 
             }
         }
@@ -107,8 +108,10 @@ public class Translation {
 
     }
 
+    // ----------------------------------------
     // Array Translation from [char ArrayList]
     public static <T> ArrayList<?> cArrToArray(ArrayList<Character> c, int convertTo) {
+        long t = 5004;
 
         return null;
     }
