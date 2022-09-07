@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch CompProgramming",
+            "request": "launch",
+            "mainClass": "Class.CompProgramming",
+            "projectName": "testPro_c8ee41f1"
+        },
+        {
             "name": "Java",
             "type": "java",
             "request": "launch",

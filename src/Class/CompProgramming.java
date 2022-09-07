@@ -1,11 +1,9 @@
+package Class;
+
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Vector;
-
-import Class.FastScanner;
-import Class.Utility;
-import Class.Math2;
 
 public class CompProgramming {
     public static void main(String[] args) throws Exception {
@@ -46,14 +44,14 @@ public class CompProgramming {
         // Long temp = (Long) results.get(0);
         // System.out.println(temp);
 
-        boolean greater = true;
-        long N = 10000;
-
+        // boolean greater = true;
+        // long N = 10000;
+        //
         // Vector<?> vecResult = Math2.eratosthenesPrimeList(N, greater);
         // for (int i = 0; i <= vecResult.size() - 1; ++i)
         // System.out.println(vecResult.get(i));
-
-        Math2.monteCarloPi(200);
+        //
+        // Math2.monteCarloPi(200);
 
     }
 }
