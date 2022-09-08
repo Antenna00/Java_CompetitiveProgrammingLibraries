@@ -195,7 +195,6 @@ public class Translation {
     // -----------------------------------------
     // From boolean / Boolean
     // To int
-
     static int boolToInt(boolean bool) {
         // True = 0
         // False = 1
@@ -204,6 +203,32 @@ public class Translation {
         } else {
             return 0;
         }
+
+    }
+
+    // boolean array -> int array
+    static int[] bArrToiArr(boolean[] bArr) {
+        int length = bArr.length;
+        int[] iArr = new int[length];
+
+        for (int i = 0; i < length; i++) {
+            if (bArr[i]) {
+                iArr[i] = 1;
+            } else {
+                iArr[i] = 0;
+            }
+        }
+        return iArr;
+    }
+
+    // boolean array -> String array
+    static String[] bArrTosArr(boolean[] bArr) {
+        int length = bArr.length;
+        String[] sArr = new String[length];
+
+        // 処理
+
+        return sArr;
 
     }
 
