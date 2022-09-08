@@ -124,6 +124,8 @@ public class Translation {
             for (Character c : cArr) {
                 iArr.add(Integer.valueOf(c));
             }
+
+            return iArr;
         } else if (convertTo == 1) {
             List<String> sArr = new ArrayList<>();
 
@@ -224,9 +226,16 @@ public class Translation {
     // boolean array -> String array
     static String[] bArrTosArr(boolean[] bArr) {
         int length = bArr.length;
-        String[] sArr = new String[length];
 
-        // 処理
+        Boolean[] BArr = new Boolean[length];
+
+        for (int i = 0; i < length; i++) {
+            BArr[i] = Boolean.valueOf(bArr[i]);
+        }
+
+        String[] sArr = Arrays.stream(BArr)
+                .map(s -> String.valueOf(s))
+                .toArray(String[]::new);
 
         return sArr;
 
