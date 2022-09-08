@@ -234,6 +234,28 @@ public class Translation {
 
     // -----------------------------------------
     // From Arrays
+    // From char[]
+    public static String cArrToStr(char[] cArr) {
+        /*
+         * Option 1:
+         * String str = new String(cArr);
+         * return str;
+         */
+        String str = String.valueOf(cArr);
+        Character[] cs = new String(cArr).chars().mapToObj(c -> (char) c).toArray(Character[]::new);
+
+        return str;
+    }
+
+    public static int cArrToInt(char[] cArr) {
+        return 0;
+    }
+
+    public static String iArrToStr(int[] iArr) {
+        String str = Arrays.stream(iArr).toString();
+
+        return null;
+    }
     // -----------------------------------------
     // From List & ArraysList
     // -----------------------------------------
